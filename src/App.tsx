@@ -12,7 +12,7 @@ function App() {
 const {loading, error, products} = useProducts();
 
   return (
-<div className="container mx-auto max-w-2xl pt-5">
+  <div className="container mx-auto max-w-2xl pt-5">
   
   { loading && <Loader />}
   { error && <ErrorMessage error={ error } /> }
