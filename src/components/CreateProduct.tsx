@@ -17,7 +17,7 @@ const productData: IProduct=  {
 }
 
 interface createProductProps {
-    onCreate: () => void;
+    onCreate: (product: IProduct) => void;
 }
 
 export function CreateProduct( {onCreate}: createProductProps) {
@@ -37,7 +37,7 @@ export function CreateProduct( {onCreate}: createProductProps) {
         productData.title = value;
 
         const response = await axios.post<IProduct>('https://fakestoreapi.com/products', productData)
-        onCreate();
+        onCreate(response.data);
 
     }
 
